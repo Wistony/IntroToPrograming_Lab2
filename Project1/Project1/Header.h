@@ -20,4 +20,4 @@ public:
 	void country_get_info(string str, int num);
 };
 
-void amount_of_points(Country**, int);
+void counts_points(Country**, int);

@@ -17,8 +17,19 @@ Country::~Country() {
 	delete[] mark;
 }
 
-void amount_of_points(Country** country_list,int num) {
-	for (int i = 0; i < num; i++)
-		for (int j = 0; j < num; j++)
-			country_list[i]->result += country_list[i]->mark[j];
+void counts_points(Country** country_list, int num) {
+	int result[10] = { 12,10,8,7,6,5,4,3,2,1 };
+	
+	for (int k = 0; k < num; k++) {
+		for (int i = 0; i < num; i++) {
+			for (int j = 0; j < num - 1; j++) {
+				if (country_list[j]->mark[k] < country_list[j + 1]->mark[k]) {
+					swap(country_list[j], country_list[j + 1]);
+				}
+			}
+		}
+		for (int i = 0; i < 10; i++) {
+			country_list[i]->result += result[i];
+		}
+	}
 }

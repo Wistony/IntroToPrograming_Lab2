@@ -19,9 +19,12 @@ int main() {
 		country_list[i] = country;
 	}
 	
-	amount_of_points(country_list, num);
-	cout << country_list[0]->result;
-	cout << country_list[1]->result;
+	counts_points(country_list, num);
+	
+	
 
+
+
+	fileEuro.close();
 	system("pause");
 }
