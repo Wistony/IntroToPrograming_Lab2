@@ -15,7 +15,9 @@ public:
 		result = 0;
 	}
 
-	~Country() {};
+	~Country();
 
 	void country_get_info(string str, int num);
 };
+
+void amount_of_points(Country**, int);
