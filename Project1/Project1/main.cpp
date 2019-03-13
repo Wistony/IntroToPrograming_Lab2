@@ -10,7 +10,6 @@ int main() {
 	int num = stoi(number);
 
 	Country **country_list = new Country*[num];
-
 	for (int i = 0; i < num; i++) {
 		Country* country = new Country(20);
 		string str;
@@ -19,15 +18,19 @@ int main() {
 		country_list[i] = country;
 	}
 	
+	fileEuro.close();
+	
 	counts_points(country_list, num);
 	rotate_accordingTo_result(country_list, num);
+
+	ofstream top("result.csv");
 	
-	cout << country_list[0]->name << " " << country_list[0]->result << endl;
-	cout << country_list[1]->name << " " << country_list[1]->result;
+	for (int i = 0; i < 10; i++) {
+		top << i + 1 << " " << country_list[i]->name << " " << country_list[i]->result << endl;
+	}
 	
 
-
-
-	fileEuro.close();
+	
+	top.close();
 	system("pause");
 }

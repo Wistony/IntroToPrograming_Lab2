@@ -42,3 +42,4 @@ void rotate_accordingTo_result(Country** country_list, int num) {
 		}
 	}
 }
+
