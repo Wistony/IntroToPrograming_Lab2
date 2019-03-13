@@ -20,7 +20,10 @@ int main() {
 	}
 	
 	counts_points(country_list, num);
+	rotate_accordingTo_result(country_list, num);
 	
+	cout << country_list[0]->name << " " << country_list[0]->result << endl;
+	cout << country_list[1]->name << " " << country_list[1]->result;
 	
 
 

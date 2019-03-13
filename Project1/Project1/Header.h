@@ -21,3 +21,4 @@ public:
 };
 
 void counts_points(Country**, int);
+void rotate_accordingTo_result(Country**, int);
