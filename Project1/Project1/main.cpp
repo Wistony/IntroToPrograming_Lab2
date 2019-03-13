@@ -25,12 +25,12 @@ int main() {
 
 	ofstream top("result.csv");
 	
+	cout << "\t\t\t***Top - 10***" << endl;
 	top << "Position;Country;Result" << endl;
 	for (int i = 0; i < 10; i++) {
 		top << i + 1 << ";" << country_list[i]->name << ";" << country_list[i]->result << endl;
+		cout << i + 1 << "  " << country_list[i]->name << "  " << country_list[i]->result << endl;
 	}
-	
-
 	
 	top.close();
 	system("pause");
