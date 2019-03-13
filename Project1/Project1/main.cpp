@@ -9,33 +9,25 @@ int main() {
 	getline(fileEuro, number);
 	int num = stoi(number);
 
-	Country ukr(2);
+	Country **list = new Country*[num];
 
-	for (int i = 0; i < 2; i++) {
+	for (int i = 0; i < num; i++) {
+		Country* country = new Country(20);
+		string str;
 		getline(fileEuro, str);
-		int position = str.find(",");
-		ukr.name = str.substr(0, position);
-		str = str.substr(position + 1, str.length());
-
-		for (int i = 0; i < num; i++) {
-			position = str.find(",");
-			string mark = str.substr(0, position);
-			ukr.mark[i] = stoi(mark);
-			str = str.substr(position + 1, str.length());
-		}
-
-	}
-	
-	for (int i = 0; i < 2; i++)
-		cout << ukr.name << endl;
-	for (int i = 0; i < 2; i++) {
-		for (int i = 0; i < num; i++)
-			cout << ukr.mark[i] << " ";
-
-		cout << endl << endl;
+		country->country_get_info(str, num);
+		list[i] = country;
 	}
 
+	cout << list[0]->name;
+	cout << list[1]->name;
+	cout << list[2]->name;
 
+	for (int i = 0; i < num; i++) {
+		cout << list[0]->mark[i] << " ";
+
+
+	}
 
 
 	system("pause");
