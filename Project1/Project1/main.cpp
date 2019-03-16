@@ -33,5 +33,6 @@ int main() {
 	}
 	
 	top.close();
+
 	system("pause");
 }

@@ -1,12 +1,24 @@
 #include "Header.h"
 
 void Country::country_get_info(string str, int num) {
-	int position = str.find(",");
-	name = str.substr(0, position);
-	str = str.substr(position + 1, str.length());
+	if (str[0] == '"') {
+		int position = str.find(",");
+		string name1 = str.substr(1, position);
+		str = str.substr(position + 1, str.length());
+		position = str.find(",");
+		string name2 = str.substr(0, position - 1);
+		str = str.substr(position + 1, str.length());
+		name = name1 + name2;
+	}
+	
+	else {
+		int position = str.find(",");
+		name = str.substr(0, position);
+		str = str.substr(position + 1, str.length());
+	}
 
 	for (int i = 0; i < num; i++) {
-		position = str.find(",");
+		int position = str.find(",");
 		string rating = str.substr(0, position);
 		mark[i] = stoi(rating);
 		str = str.substr(position + 1, str.length());
